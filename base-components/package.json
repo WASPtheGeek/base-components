@@ -1,5 +1,5 @@
 {
-  "name": "base-components",
+  "name": "@WASPtheGeek/base-components",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -8,6 +8,7 @@
     "start": "next start",
     "lint": "next lint"
   },
+  "repository": "https://github.com/WASPtheGeek/base-components",
   "dependencies": {
     "react": "^18",
     "react-dom": "^18",
