@@ -2,7 +2,9 @@
 
 ## To publish a package:
 
-- `npm run bundle` to create a dist folder
+<!-- - `npm run bundle` to create a dist folder -->
+
+- `npm version x` to update version
 - `npm publish` to publish a package
 
 How to publish an npm package with next.js?
