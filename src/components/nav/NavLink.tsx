@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import React, { ComponentProps } from "react";
-import { cn } from "@/utils/cn";
+import { cn } from "../../utils";
 import { usePathname } from "next/navigation";
 
 export default function NavLink(props: ComponentProps<typeof Link>) {
