@@ -6,7 +6,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "bundle": "tsup src/app/index.ts && generate-files",
+    "bundle": "tsup src/app/index.ts && npm run generate-files",
     "generate-files": "npx tailwind -c ./tailwind.config.ts -i ./style.scss -o dist/style.scss"
   },
   "repository": "https://github.com/WASPtheGeek/base-components",
