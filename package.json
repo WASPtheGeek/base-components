@@ -6,6 +6,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "publish-package": "npm run bundle && npm version patch && npm publish",
     "bundle": "tsup src/app/index.ts && npm run generate-files",
     "generate-files": "npx tailwind -c ./tailwind.config.ts -i ./style.scss -o dist/style.scss"
   },
