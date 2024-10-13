@@ -1,6 +1,6 @@
 // Function to merge classNames
 export function cn(
-  ...args: (string | undefined | Record<string, boolean>)[]
+  ...args: (string | undefined | Record<string, boolean | undefined>)[]
 ): string {
   const results = args
     .filter((x) => x !== undefined)

@@ -2,21 +2,49 @@
 
 import Link from "next/link";
 import React, { ComponentProps } from "react";
-import { cn } from "../../utils";
+import { cn, isElQuery } from "../../utils";
 import { usePathname } from "next/navigation";
 
-export default function NavLink(props: ComponentProps<typeof Link>) {
+interface IProps extends ComponentProps<typeof Link> {
+  /** Keep item visible in the nav and
+  do not hide under the mobile toggle */
+  keepVisible?: boolean;
+}
+
+export default function NavLink(props: IProps) {
+  const { keepVisible, ...restProps } = props;
   const pathName = usePathname();
+
+  const [itemRef, setItemRef] = React.useState<HTMLLIElement | null>(null);
+
+  const isInPanel = React.useMemo(() => {
+    if (!itemRef) return false;
+
+    const parent = (itemRef as Element).parentElement;
+
+    return isElQuery(parent, ".hidden-links");
+  }, [itemRef]);
 
   const clsn = cn(
     props.className,
-    "px-4 py-6 border-amber-500", // todo: make border color conifgurable
+    "base-nav-link ",
+    "border-amber-500",
     "hover:bg-neutral-100", // todo: make bg color conifgurable
     "focus-visible:bg-secondary focus-visible:text-secondary-foreground", // todo: configure focus-visible
     {
-      "border-b-2": pathName === props.href,
+      "border-b-2": !isInPanel && pathName === props.href,
+      "keep-visible": keepVisible,
     }
   );
 
-  return <Link {...props} className={clsn} />;
+  const linkClsn = cn(props.className, "block w-full h-full", {
+    "px-4 py-6": !isInPanel,
+    "px-4 py-1": isInPanel,
+  });
+
+  return (
+    <li ref={setItemRef} className={clsn}>
+      <Link {...restProps} className={linkClsn} />
+    </li>
+  );
 }
