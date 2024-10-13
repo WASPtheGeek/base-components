@@ -9,10 +9,11 @@ interface IProps extends ComponentProps<typeof Link> {
   /** Keep item visible in the nav and
   do not hide under the mobile toggle */
   keepVisible?: boolean;
+  noStyle?: boolean;
 }
 
 export default function NavLink(props: IProps) {
-  const { keepVisible, ...restProps } = props;
+  const { keepVisible, noStyle, ...restProps } = props;
   const pathName = usePathname();
 
   const [itemRef, setItemRef] = React.useState<HTMLLIElement | null>(null);
@@ -25,21 +26,18 @@ export default function NavLink(props: IProps) {
     return isElQuery(parent, ".hidden-links");
   }, [itemRef]);
 
-  const clsn = cn(
-    props.className,
-    "base-nav-link ",
-    "border-amber-500",
-    "hover:bg-neutral-100", // todo: make bg color conifgurable
-    "focus-visible:bg-secondary focus-visible:text-secondary-foreground", // todo: configure focus-visible
-    {
-      "border-b-2": !isInPanel && pathName === props.href,
-      "keep-visible": keepVisible,
-    }
-  );
+  const clsn = cn(props.className, "base-nav-link", {
+    "border-amber-500": !noStyle,
+    "hover:bg-neutral-100": !noStyle, // todo: make bg color conifgurable
+    "focus-visible:bg-secondary focus-visible:text-secondary-foreground":
+      !noStyle, // todo: configure focus-visible
+    "border-b-2": !noStyle && !isInPanel && pathName === props.href,
+    "keep-visible": keepVisible,
+  });
 
   const linkClsn = cn(props.className, "block w-full h-full", {
-    "px-4 py-6": !isInPanel,
-    "px-4 py-1": isInPanel,
+    "px-4 py-6": !noStyle && !isInPanel,
+    "px-4 py-1": !noStyle && isInPanel,
   });
 
   return (

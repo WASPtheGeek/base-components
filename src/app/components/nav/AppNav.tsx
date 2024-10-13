@@ -12,7 +12,7 @@ export default function AppNav() {
   return (
     <Nav>
       <NavLinks isMobile={isMobile}>
-        <NavLink keepVisible href={"/"}>
+        <NavLink keepVisible noStyle href={"/"}>
           Logo!
         </NavLink>
         <NavLink href={"/test"}>Test</NavLink>
