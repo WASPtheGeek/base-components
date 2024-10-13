@@ -1,4 +1,5 @@
-import { NavMobileLinks, VisibleLinks } from ".";
+import NavMobileLinks from "./NavMobileLinks";
+import VisibleLinks from "./VisibleLinks";
 
 interface IProps {
   className?: string;

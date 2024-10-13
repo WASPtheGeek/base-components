@@ -9,7 +9,7 @@ interface IProps {
   children?: React.ReactNode;
 }
 
-export default function NavLinks(props: IProps) {
+export default function NavMobileLinks(props: IProps) {
   const { children } = props;
 
   const [hiddenItems, setHiddenItems] = React.useState<React.ReactNode[]>([]);
