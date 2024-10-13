@@ -26,7 +26,7 @@ export default function AppNav() {
           hidden 1
         </NavLink>
         <NavLink href={"/test"}>hidden 2</NavLink>
-        <NavItem keepVisible>
+        <NavItem keepVisible end>
           <div>
             <button>Click!</button>
           </div>

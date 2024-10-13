@@ -1,20 +1,19 @@
 "use client";
 
-import Link from "next/link";
-import React, { ComponentProps } from "react";
+import React from "react";
 import { cn, isElQuery } from "../../utils";
-import { usePathname } from "next/navigation";
 
 interface IProps {
   /** Keep item visible in the nav and
   do not hide under the mobile toggle */
   keepVisible?: boolean;
+  end?: boolean;
   className?: string;
   children?: React.ReactNode;
 }
 
 export default function NavItem(props: IProps) {
-  const { keepVisible, children } = props;
+  const { keepVisible, children, end } = props;
 
   const [itemRef, setItemRef] = React.useState<HTMLLIElement | null>(null);
 
@@ -30,6 +29,7 @@ export default function NavItem(props: IProps) {
     "keep-visible": keepVisible,
     "px-4 py-6": !isInPanel,
     "px-4 py-1": isInPanel,
+    "ml-auto": end,
   });
 
   return (

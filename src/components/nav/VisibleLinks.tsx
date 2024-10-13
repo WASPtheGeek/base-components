@@ -18,5 +18,5 @@ export default function VisibleLinks(props: IProps) {
 
   if (!mounted) return null;
 
-  return <ul className="visible-links flex">{children}</ul>;
+  return <ul className="visible-links flex w-full">{children}</ul>;
 }
