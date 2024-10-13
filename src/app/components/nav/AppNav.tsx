@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { Nav, NavLink, NavLinks } from "../../../components";
+import { Nav, NavItem, NavLink, NavLinks } from "../../../components";
 import { useDeviceDetection } from "../../../hooks";
 
 export default function AppNav() {
@@ -26,6 +26,11 @@ export default function AppNav() {
           hidden 1
         </NavLink>
         <NavLink href={"/test"}>hidden 2</NavLink>
+        <NavItem keepVisible>
+          <div>
+            <button>Click!</button>
+          </div>
+        </NavItem>
       </NavLinks>
     </Nav>
   );
