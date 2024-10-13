@@ -27,15 +27,16 @@ export default function NavLink(props: IProps) {
   }, [itemRef]);
 
   const clsn = cn(props.className, "base-nav-link", {
-    "border-amber-500": !noStyle,
+    "border-b-2": !noStyle && !isInPanel,
+    "border-transparent": !noStyle && !isInPanel && pathName !== props.href,
     "hover:bg-neutral-100": !noStyle, // todo: make bg color conifgurable
     "focus-visible:bg-secondary focus-visible:text-secondary-foreground":
       !noStyle, // todo: configure focus-visible
-    "border-b-2": !noStyle && !isInPanel && pathName === props.href,
+    "border-amber-500": !noStyle && !isInPanel && pathName === props.href,
     "keep-visible": keepVisible,
   });
 
-  const linkClsn = cn(props.className, "block w-full h-full", {
+  const linkClsn = cn("block w-full h-full", {
     "px-4 py-6": !noStyle && !isInPanel,
     "px-4 py-1": !noStyle && isInPanel,
   });
