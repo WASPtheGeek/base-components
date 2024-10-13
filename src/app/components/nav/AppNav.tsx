@@ -27,8 +27,11 @@ export default function AppNav() {
         </NavLink>
         <NavLink href={"/test"}>hidden 2</NavLink>
         <NavItem keepVisible end>
-          <div>
-            <button>Click!</button>
+          <div className="flex gap-2">
+            <button>lv</button>
+            <button>en</button>
+            <button>ru</button>
+            <br />
           </div>
         </NavItem>
       </NavLinks>
