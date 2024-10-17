@@ -6,10 +6,10 @@ export interface IProps {
   className?: string;
 }
 
-export default function Container(props: IProps) {
+export default function ContainerL(props: IProps) {
   const { children } = props;
 
-  const className = cn("base-container", "p-4", props.className);
+  const className = cn("base-container-l", "p-8", props.className);
 
   return <div className={className}>{children}</div>;
 }

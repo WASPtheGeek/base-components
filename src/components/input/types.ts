@@ -1,0 +1,1 @@
+export const integerRegex = new RegExp(/[^0-9]/g);
