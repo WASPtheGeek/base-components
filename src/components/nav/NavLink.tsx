@@ -1,19 +1,13 @@
 "use client";
 
 import Link from "next/link";
-import React, { ComponentProps } from "react";
-import { cn, isElQuery } from "../../utils";
 import { usePathname } from "next/navigation";
+import React from "react";
+import { cn, isElQuery } from "../../utils";
+import { INavLinkProps } from "./types";
 
-interface IProps extends ComponentProps<typeof Link> {
-  /** Keep item visible in the nav and
-  do not hide under the mobile toggle */
-  keepVisible?: boolean;
-  noStyle?: boolean;
-}
-
-export default function NavLink(props: IProps) {
-  const { keepVisible, noStyle, ...restProps } = props;
+export default function NavLink(props: INavLinkProps) {
+  const { keepVisible, noStyle, type = "horizontal", ...restProps } = props;
   const pathName = usePathname();
 
   const [itemRef, setItemRef] = React.useState<HTMLLIElement | null>(null);
@@ -37,8 +31,9 @@ export default function NavLink(props: IProps) {
   });
 
   const linkClsn = cn("block w-full h-full", {
-    "px-4 py-6": !noStyle && !isInPanel,
-    "px-4 py-1": !noStyle && isInPanel,
+    "px-4 py-6": type === "horizontal" && !noStyle && !isInPanel,
+    "px-4 py-1": type === "horizontal" && !noStyle && isInPanel,
+    "py-4 px-6": type === "vertical",
   });
 
   return (

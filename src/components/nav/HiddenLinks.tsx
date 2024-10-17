@@ -1,11 +1,16 @@
 import React from "react";
+import { cn } from "../../utils";
 
 interface IProps {
   children?: React.ReactNode;
+  className?: string;
+  type?: "vertical" | "horizontal";
 }
 
 export default function HiddenLinks(props: IProps) {
-  const { children } = props;
+  const { children, className } = props;
 
-  return <ul className="hidden-links flex flex-col">{children}</ul>;
+  const clsn = cn(className, "hidden-links flex flex-col");
+
+  return <ul className={clsn}>{children}</ul>;
 }

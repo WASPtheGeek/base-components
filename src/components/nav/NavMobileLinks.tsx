@@ -6,11 +6,13 @@ import NavToggle from "./NavToggle";
 import HiddenLinks from "./HiddenLinks";
 
 interface IProps {
+  className?: string;
   children?: React.ReactNode;
+  type?: "vertical" | "horizontal";
 }
 
 export default function NavMobileLinks(props: IProps) {
-  const { children } = props;
+  const { children, ...restProps } = props;
 
   const [hiddenItems, setHiddenItems] = React.useState<React.ReactNode[]>([]);
   const [visibleItems, setVisibleItems] = React.useState<React.ReactNode[]>([]);
@@ -42,12 +44,12 @@ export default function NavMobileLinks(props: IProps) {
       {/* toggle */}
       {visibleMounted && (
         <NavToggle>
-          <HiddenLinks>{hiddenItems}</HiddenLinks>
+          <HiddenLinks {...restProps}>{hiddenItems}</HiddenLinks>
         </NavToggle>
       )}
 
       {/* basic links */}
-      <VisibleLinks onMount={() => setVisibleMounted(true)}>
+      <VisibleLinks {...restProps} onMount={() => setVisibleMounted(true)}>
         {visibleItems}
       </VisibleLinks>
     </>

@@ -6,14 +6,15 @@ interface IProps {
   className?: string;
   children?: React.ReactNode;
   isMobile?: boolean;
+  type?: "vertical" | "horizontal";
 }
 
 export default function NavLinks(props: IProps) {
-  const { children, isMobile } = props;
+  const { children, isMobile, ...restProps } = props;
 
   if (isMobile) {
-    return <NavMobileLinks>{children}</NavMobileLinks>;
+    return <NavMobileLinks {...restProps}>{children}</NavMobileLinks>;
   }
 
-  return <VisibleLinks>{children}</VisibleLinks>;
+  return <VisibleLinks {...restProps}>{children}</VisibleLinks>;
 }
