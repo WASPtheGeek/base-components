@@ -3,6 +3,7 @@ import { cn } from "../../utils";
 import { Spinner } from "../spinner";
 import { GridColumnConfig, IGridProps } from "./types";
 import { getDataByType } from "./utils";
+import React from "react";
 
 interface IProps<T> extends IGridProps<T> {
   columns?: GridColumnConfig<T>[];

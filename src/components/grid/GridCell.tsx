@@ -1,5 +1,6 @@
 import { cn } from "../../utils";
 import { GridColumnType } from "./types";
+import React from "react";
 
 interface IProps {
   colSpan?: number;

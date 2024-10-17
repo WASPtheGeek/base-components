@@ -1,4 +1,5 @@
 import { cn } from "../../utils";
+import React from "react";
 
 interface IProps {
   className?: string;

@@ -2,6 +2,7 @@ import { DetailedHTMLProps } from "react";
 import TextInput from "./TextInput";
 import { integerRegex } from "./types";
 import { cn } from "../../utils";
+import React from "react";
 
 type NumberInputProps = Omit<
   DetailedHTMLProps<
