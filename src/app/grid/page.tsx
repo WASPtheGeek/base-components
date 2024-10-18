@@ -13,7 +13,9 @@ export default function GridDemo() {
     if (field?.startsWith("pet")) return "text-amber-500";
   };
 
-  const actionsTemplate = () => {
+  const actionsTemplate = (data: TestTableModel) => {
+    console.log(data);
+
     return (
       <div className="flex gap-4 items-center">
         <Button label="Click" />
@@ -72,7 +74,7 @@ export default function GridDemo() {
         columnConfigs={columnConfig}
         header={"Actions"}
         data={tableData}
-        actionsTemplate={actionsTemplate()}
+        actionsTemplate={actionsTemplate}
         actionsHeader="Custom actions"
       />
     </div>

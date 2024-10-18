@@ -28,10 +28,10 @@ export interface IGridProps<T = object> {
   footer?: React.ReactNode;
   /* The date format to display. */
   dateFormat?: string;
-  /** The actions column template. */
-  actionsTemplate?: React.ReactNode;
   /** The actions column header. */
   actionsHeader?: React.ReactNode;
+  /** The actions column template. */
+  actionsTemplate?: (rowData: T) => React.ReactNode;
   /** The cell classname. */
   cellClassName?: (field?: keyof T) => string | undefined;
 }

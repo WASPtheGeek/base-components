@@ -6,12 +6,12 @@ export function getDataByType<T>(
   field: string | number | symbol | undefined,
   type: GridColumnType = "String",
   dateFormat?: string,
-  actionsTemplate?: React.ReactNode
+  actionsTemplate?: (rowData: T) => React.ReactNode
 ) {
   if (!field) return;
 
   if (field === "actions") {
-    return actionsTemplate;
+    return actionsTemplate ? actionsTemplate(rowData) : undefined;
   }
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const data = (rowData as any)[field];
