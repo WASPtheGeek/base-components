@@ -10,25 +10,11 @@ export default function AppNav() {
   const isMobile = React.useMemo(() => device === "Mobile", [device]);
 
   return (
-    <Nav>
+    <Nav className="border-t-2">
       <NavLinks isMobile={isMobile}>
         <NavLink keepVisible href={"/"}>
           <i className="fas fa-chess-knight" />
         </NavLink>
-        <NavLink href={"/grid"}>Grid</NavLink>
-        <NavLink keepVisible href={"/splitGrid"}>
-          SplitGrid
-        </NavLink>
-        <NavLink keepVisible href={"/button"}>
-          Button
-        </NavLink>
-        <NavLink keepVisible={false} href={"/textInput"}>
-          Text Input
-        </NavLink>
-        <NavLink href={"/numberInput"}>Number Input</NavLink>
-        <NavLink href={"/spinner"}>Spinner</NavLink>
-        <NavLink href={"/container"}>Container</NavLink>
-        <NavLink href={"/verticalNav"}>Vertical nav</NavLink>
         <NavItem keepVisible end>
           <div className="flex gap-2">
             <button>lv</button>

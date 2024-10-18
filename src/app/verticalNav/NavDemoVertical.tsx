@@ -3,7 +3,7 @@ import Nav from "../../components/nav/Nav";
 import NavLinkVertical from "../../components/nav/NavLinkVertical";
 import NavLinks from "../../components/nav/NavLinks";
 
-export default function NavVertical() {
+export default function NavDemoVertical() {
   return (
     <Nav type="vertical" className="w-1/5">
       <NavLinks type="vertical">

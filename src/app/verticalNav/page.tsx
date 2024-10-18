@@ -1,9 +1,9 @@
-import NavVertical from "./NavVertical";
+import NavDemoVertical from "./NavDemoVertical";
 
 export default function VNDemo() {
   return (
     <div className="h-full">
-      <NavVertical />
+      <NavDemoVertical />
     </div>
   );
 }
