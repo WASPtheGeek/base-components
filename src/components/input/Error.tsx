@@ -10,7 +10,7 @@ function Error(props: IProps) {
   if (!value) return null;
 
   return (
-    <div className="base-error input-error text-red-500 pl-1 pt-1 text-sm">
+    <div className="base-error input-error text-red-500 pl-1 text-sm">
       {value}
     </div>
   );

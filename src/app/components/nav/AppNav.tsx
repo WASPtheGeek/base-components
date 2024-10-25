@@ -10,7 +10,7 @@ export default function AppNav() {
   const isMobile = React.useMemo(() => device === "Mobile", [device]);
 
   return (
-    <Nav className="border-t-2">
+    <Nav>
       <NavLinks isMobile={isMobile}>
         <NavLink keepVisible href={"/"}>
           <i className="fas fa-chess-knight" />
