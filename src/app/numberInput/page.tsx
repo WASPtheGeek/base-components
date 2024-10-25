@@ -11,6 +11,14 @@ export default function InputNumberDemo() {
   return (
     <ContainerL>
       <NumberInput
+        label="Some test label"
+        className="w-1/3 mb-4"
+        placeholder="Placeholder"
+        value={value1}
+        onChange={(value) => setValue1(value)}
+        required
+      />
+      <NumberInput
         className="w-1/3 mb-4"
         placeholder="Placeholder"
         value={value1}

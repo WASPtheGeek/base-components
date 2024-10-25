@@ -13,7 +13,7 @@ export interface ITextInputProps
   label?: string;
   error?: string;
   isValid?: boolean;
-  value?: string | null | undefined;
+  value?: string | number | null | undefined;
   onChange?: (e: React.ChangeEvent<HTMLInputElement>, value?: string) => void;
 }
 

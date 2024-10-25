@@ -4,22 +4,23 @@ import { integerRegex } from "./types";
 import { cn } from "../../utils";
 import React from "react";
 
-type NumberInputProps = Omit<
-  DetailedHTMLProps<
-    React.InputHTMLAttributes<HTMLInputElement>,
-    HTMLInputElement
-  >,
-  "onChange"
->;
-
-interface IProps extends NumberInputProps {
+interface INumberInputProps
+  extends Omit<
+    DetailedHTMLProps<
+      React.InputHTMLAttributes<HTMLInputElement>,
+      HTMLInputElement
+    >,
+    "onChange" | "value"
+  > {
+  label?: string;
   max?: number;
   error?: string;
   isValid?: boolean;
+  value?: string | number | null | undefined;
   onChange?: (value?: number) => void;
 }
 
-function NumberInput(props: IProps) {
+function NumberInput(props: INumberInputProps) {
   const { max, onChange } = props;
   const className = cn("base-number-input", props.className);
 
