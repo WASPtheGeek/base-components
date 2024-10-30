@@ -1,24 +1,7 @@
-import { DetailedHTMLProps } from "react";
-import TextInput from "./TextInput";
-import { integerRegex } from "./types";
-import { cn } from "../../utils";
 import React from "react";
-
-interface INumberInputProps
-  extends Omit<
-    DetailedHTMLProps<
-      React.InputHTMLAttributes<HTMLInputElement>,
-      HTMLInputElement
-    >,
-    "onChange" | "value"
-  > {
-  label?: string;
-  max?: number;
-  error?: string;
-  isValid?: boolean;
-  value?: string | number | null | undefined;
-  onChange?: (value?: number) => void;
-}
+import { cn } from "../../utils";
+import TextInput from "./TextInput";
+import { integerRegex, INumberInputProps } from "./types";
 
 function NumberInput(props: INumberInputProps) {
   const { max, onChange } = props;

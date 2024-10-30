@@ -1,21 +1,6 @@
-import React, { DetailedHTMLProps } from "react";
-import { Asterisk, InputError } from ".";
+import React from "react";
+import { Asterisk, InputError, ITextInputProps } from ".";
 import { cn } from "../../utils";
-
-export interface ITextInputProps
-  extends Omit<
-    DetailedHTMLProps<
-      React.InputHTMLAttributes<HTMLInputElement>,
-      HTMLInputElement
-    >,
-    "value"
-  > {
-  label?: string;
-  error?: string;
-  isValid?: boolean;
-  value?: string | number | null | undefined;
-  onChange?: (e: React.ChangeEvent<HTMLInputElement>, value?: string) => void;
-}
 
 function TextInput(props: ITextInputProps) {
   const { error, label, required, isValid, onChange, ...restProps } = props;
