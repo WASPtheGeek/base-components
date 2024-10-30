@@ -1,3 +1,4 @@
+import React from "react";
 import Image from "next/image";
 import { cn } from "../../utils";
 import { Icon } from "../icon";

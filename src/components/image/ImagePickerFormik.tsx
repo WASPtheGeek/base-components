@@ -1,3 +1,4 @@
+import React from "react";
 import { ImagePicker } from "../";
 import { cn } from "../../utils";
 import { IImagePickerFormikProps } from "./types";
