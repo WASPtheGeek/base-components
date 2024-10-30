@@ -15,6 +15,7 @@ export default function NavVertical() {
         <NavLinkVertical href={"/container"}>Container</NavLinkVertical>
         <NavLinkVertical href={"/verticalNav"}>Vertical nav</NavLinkVertical>
         <NavLinkVertical href={"/icon"}>Icon</NavLinkVertical>
+        <NavLinkVertical href={"/image"}>Image picker</NavLinkVertical>
       </NavLinks>
     </Nav>
   );

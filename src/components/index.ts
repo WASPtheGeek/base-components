@@ -6,3 +6,4 @@ export * from "./grid";
 export * from "./splitGrid";
 export * from "./input";
 export * from "./icon";
+export * from "./image";

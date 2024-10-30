@@ -32,3 +32,9 @@ export interface ITextInputProps
   value?: string | number | null | undefined;
   onChange?: (e: React.ChangeEvent<HTMLInputElement>, value?: string) => void;
 }
+
+export interface IInputLabelProps {
+  className?: string;
+  label?: string;
+  required?: boolean;
+}

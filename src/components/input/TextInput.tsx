@@ -1,5 +1,5 @@
 import React from "react";
-import { Asterisk, InputError, ITextInputProps } from ".";
+import { InputError, InputLabel, ITextInputProps } from ".";
 import { cn } from "../../utils";
 
 function TextInput(props: ITextInputProps) {
@@ -34,12 +34,7 @@ function TextInput(props: ITextInputProps) {
 
   return (
     <div className={className}>
-      {label && (
-        <div className="pl-1 flex gap-2">
-          {label}
-          {required && <Asterisk />}
-        </div>
-      )}
+      <InputLabel label={label} required={required} />
       <input
         {...restProps}
         value={value}
