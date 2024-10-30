@@ -1,6 +1,6 @@
 {
   "name": "@WASPtheGeek/base-components",
-  "version": "0.1.23",
+  "version": "0.1.24",
   "type": "module",
   "scripts": {
     "dev": "next dev",
