@@ -7,6 +7,7 @@ export const tableData: TestTableModel[] = [
     surname: "Beta",
     petType: undefined,
     birthDate: new Date(),
+    isActive: false,
   },
   {
     id: 2,
@@ -14,6 +15,7 @@ export const tableData: TestTableModel[] = [
     surname: "Zeta",
     petType: "hedgehog",
     birthDate: new Date(),
+    isActive: true,
   },
   {
     id: 3,
@@ -21,6 +23,7 @@ export const tableData: TestTableModel[] = [
     surname: "Ponchik",
     petType: "bunny",
     birthDate: new Date(),
+    isActive: true,
   },
   {
     id: 4,
@@ -28,6 +31,7 @@ export const tableData: TestTableModel[] = [
     surname: "Doe",
     petType: "cat",
     birthDate: new Date(),
+    isActive: false,
   },
   {
     id: 5,
@@ -52,6 +56,7 @@ export type TestTableModel = {
   surname: string;
   petType?: PetType;
   birthDate: Date;
+  isActive?: boolean;
 };
 
 export const columnConfig: GridColumnConfig<TestTableModel>[] = [
@@ -76,5 +81,10 @@ export const columnConfig: GridColumnConfig<TestTableModel>[] = [
   {
     field: "petType",
     title: "Pet",
+  },
+  {
+    field: "isActive",
+    title: "Active",
+    type: "Boolean",
   },
 ];

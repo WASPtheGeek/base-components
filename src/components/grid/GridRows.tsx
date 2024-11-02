@@ -18,6 +18,7 @@ function GridRows<T = object>(props: IProps<T>) {
     error,
     columns,
     dateFormat,
+    localization,
     actionsTemplate,
     cellClassName,
   } = props;
@@ -82,6 +83,7 @@ function GridRows<T = object>(props: IProps<T>) {
                       field,
                       col.type,
                       dateFormat,
+                      localization,
                       actionsTemplate
                     )}
                   </div>

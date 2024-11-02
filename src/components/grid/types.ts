@@ -1,10 +1,20 @@
-export type GridColumnType = "String" | "Number" | "Date" | "actions";
+export type GridColumnType =
+  | "String"
+  | "Number"
+  | "Date"
+  | "Boolean"
+  | "actions";
 
 export type GridColumnConfig<T = object> = {
   id?: string;
   field?: keyof T;
   title?: string;
   type?: GridColumnType;
+};
+
+export type GridLocalization = {
+  bool_true: string;
+  bool_false: string;
 };
 
 export interface IGridProps<T = object> {
@@ -30,6 +40,8 @@ export interface IGridProps<T = object> {
   dateFormat?: string;
   /** The actions column header. */
   actionsHeader?: React.ReactNode;
+  /** Grid localization. */
+  localization?: GridLocalization;
   /** The actions column template. */
   actionsTemplate?: (rowData: T) => React.ReactNode;
   /** The cell classname. */

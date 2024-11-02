@@ -1,5 +1,12 @@
 import React from "react";
-import { GridFooter, GridHeader, GridHeaderCell, GridRow, GridRows } from ".";
+import {
+  defaultGridLocalization,
+  GridFooter,
+  GridHeader,
+  GridHeaderCell,
+  GridRow,
+  GridRows,
+} from ".";
 import { GridColumnConfig, IGridProps } from "./types";
 import { cn } from "../../utils";
 
@@ -12,6 +19,7 @@ function Grid<T = object>(props: IGridProps<T>) {
     isLoading,
     error,
     footer,
+    localization = defaultGridLocalization,
     dateFormat = "DD/MM/YYYY HH:mm:ss",
     actionsTemplate,
     actionsHeader = "Actions",
@@ -97,7 +105,12 @@ function Grid<T = object>(props: IGridProps<T>) {
             </GridRow>
           </thead>
           <tbody>
-            <GridRows {...props} columns={columns} dateFormat={dateFormat} />
+            <GridRows
+              {...props}
+              columns={columns}
+              dateFormat={dateFormat}
+              localization={localization}
+            />
           </tbody>
         </table>
       </div>

@@ -69,13 +69,22 @@ export default function GridDemo() {
         isLoading
         error="Unknown custom error occured"
         cellClassName={styleCells}
-      />{" "}
+      />
       <Grid<TestTableModel>
         columnConfigs={columnConfig}
         header={"Actions"}
         data={tableData}
         actionsTemplate={actionsTemplate}
         actionsHeader="Custom actions"
+      />
+      <Grid<TestTableModel>
+        columnConfigs={columnConfig}
+        header={"Localization"}
+        data={tableData}
+        localization={{
+          bool_false: "Nē",
+          bool_true: "Jā",
+        }}
       />
     </div>
   );

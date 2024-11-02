@@ -8,13 +8,14 @@ import IncrementHeader from "./IncrementHeader";
 import GridRows from "./GridRows";
 
 export {
-    Grid,
-    GridCell,
-    GridRow,
-    GridHeaderCell,
-    GridHeader,
-    GridFooter,
-    IncrementHeader,
-    GridRows
+  Grid,
+  GridCell,
+  GridRow,
+  GridHeaderCell,
+  GridHeader,
+  GridFooter,
+  IncrementHeader,
+  GridRows,
 };
 export * from "./types";
+export * from "./localization";
