@@ -1,6 +1,7 @@
 import { cn } from "../../../utils";
 import { NumberInput } from "../";
 import { INumberInputFormikProps } from "./types";
+import React from "react";
 
 function NumberInputFormik<T = object>(props: INumberInputFormikProps<T>) {
   const { formikProps, bagField, ...restProps } = props;
